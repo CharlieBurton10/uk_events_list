@@ -23,4 +23,11 @@ section {
     opacity: 0.8;
     width: 100vw;
     min-height: 100vh;
+    padding: 60px;
+}
+
+
+.center-align {
+    margin: 0;
+    padding: 20px;
 }
