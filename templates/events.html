@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Events</title>
+</head>
+<body>
+    {% for event in events %}
+        {{ event.event_name }}<br>
+        {{ event.category_name }}<br>
+        {{ event.event_details }}<br>
+        {{ event.interested }}<br>
+        {{ event.date }}<br>
+    {% endfor %}
+</body>
+</html>
