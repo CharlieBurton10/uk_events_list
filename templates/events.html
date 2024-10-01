@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I'm extending the base template!</h2>
-
     {% for event in events %}
         {{ event.event_name }}<br>
         {{ event.category_name }}<br>
+        {{ event.location }}<br>
         {{ event.event_details }}<br>
         {{ event.interested }}<br>
         {{ event.date }}<br>
