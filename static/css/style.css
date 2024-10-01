@@ -33,6 +33,21 @@ section {
 }
 
 
+/*---------------------------------------------------------- event cards */
+.card .card-image img {
+    height: 400px;
+}
+
 .card-height {
-    height: 600px;
+    height: 550px;
+}
+
+.event-card {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card h5 {
+    padding-bottom: 5px;
 }
