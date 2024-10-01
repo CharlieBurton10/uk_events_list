@@ -31,3 +31,8 @@ section {
     margin: 0;
     padding: 20px;
 }
+
+
+.card-height {
+    height: 600px;
+}
