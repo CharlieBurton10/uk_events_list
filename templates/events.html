@@ -5,8 +5,8 @@
     {% for event in events %}
         <div class="col s12 m6 l3">
             <div class="card card-height">
-                <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="static/images/running.jpg">
+                <div class="card-image circle responsive-img waves-effect waves-block waves-light">
+                <img class="activator" src="{{ event.image }}">
                 </div>
                 <div class="card-content indigo-text text-darken-4">
                     <span class="card-title activator button-floating halfway-fab indigo-text text-darken-4">
@@ -14,11 +14,12 @@
                     </span>
                     <h5 class="event-card "><strong>{{ event.event_name }}</strong></h5>
                     <p class="event-card"><strong>Date:</strong> {{ event.date }}</p>
-                    <p class="event-card"><strong>location:</strong> {{ event.location }}</p>
+                    <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title indigo-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <span class="card-title indigo-text text-darken-4"><i class="material-icons right indigo-text text-darken-4 far fa-window-close"></i><h5><strong>{{ event.event_name }}</strong></h5></span>
+                    <p class="indigo-text text-darken-4">{{ event.event_details }}</p><br>
+                    <p class="event-card indigo-text text-darken-4"><strong>Website: </strong><a href="{{ event.link }}">{{ event.event_name }}</a></p>
                     </div>
                 </div>
             </div>
