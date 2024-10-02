@@ -21,17 +21,28 @@ section {
     background-size: cover;
     border: none;
     opacity: 0.9;
-    padding: 60px;
+    padding: 110px;
 }
 
 
 .center-align {
     margin: 0;
-    padding: 20px;
+}
+
+.flashes h3 {
+    line-height: 1;
 }
 
 
 /*---------------------------------------------------------- event cards */
+
+.card {
+    background-color: transparent;
+}
+
+.card .card-content {
+    background-color: white;
+}
 .card .card-image img {
     height: 400px;
 }
@@ -49,3 +60,6 @@ section {
 .card h5 {
     padding-bottom: 5px;
 }
+
+
+
