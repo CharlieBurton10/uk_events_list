@@ -2,9 +2,9 @@
 {% block content %}
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel indigo lighten-5">
-                <h3 class="center-align indigo-text text-darken-4">Sign Up</h3>
+                <h3 class="center-align indigo-text text-darken-4">Login</h3>
                 <!-- username -->
                 <div class="row">
 					<div class="input-field col s12">
@@ -24,14 +24,14 @@
                 <!-- register -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large indigo darken-4 text-shadow">
-                        Register <i class="fas fa-sign-in-alt"></i>
+                        Login<i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
-                <div class="row">
+                <div class="row"></div>
                     <div class="col s12">
                         <p class="center-align indigo-text text-darken-4">
-                            Already Registered?
-                            <a href="{{ url_for('login') }}" class="indigo-text text-lighten-1">Log In</a>
+                            New Here??
+                            <a href="{{ url_for('register') }}" class="indigo-text text-lighten-1">Set up an account!</a>
                         </p>
                     </div>
                 </div>
