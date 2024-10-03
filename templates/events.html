@@ -15,6 +15,11 @@
                     <h5 class="event-card "><strong>{{ event.event_name }}</strong></h5>
                     <p class="event-card"><strong>Date:</strong> {{ event.date }}</p>
                     <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
+                    <div class="right">
+                        <p>Interested? <button class="likeBtn">
+                            <i class="far fa-thumbs-up"></i>(<span class="totalLikes">0</span>)</button>
+                        </p>
+                    </div>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title indigo-text text-darken-4"><i class="material-icons right indigo-text text-darken-4 far fa-window-close"></i><h5><strong>{{ event.event_name }}</strong></h5></span>
