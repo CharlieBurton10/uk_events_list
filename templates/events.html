@@ -5,7 +5,7 @@
     {% for event in events %}
         <div class="col s12 m6 l4">
             <div class="card card-height">
-                <div class="card-image transparent circle responsive-img waves-effect waves-block waves-light">
+                <div class="card-image transparent circle responsive-img waves-effect waves-block">
                 <img class="activator" src="{{ event.image }}" alt="{{ event.event_name}}">
                 </div>
                 <div class="card-content indigo-text text-darken-4">
@@ -16,8 +16,9 @@
                     <p class="event-card"><strong>Date:</strong> {{ event.date }}</p>
                     <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
                     <div class="right">
-                        <p>Interested? <button class="likeBtn">
-                            <i class="far fa-thumbs-up"></i>(<span class="totalLikes">0</span>)</button>
+                        <p>Interested? <button class="like">
+                            <i class="far fa-thumbs-up"></i></button>
+                            <span class="likeNum">0</span>
                         </p>
                     </div>
                 </div>

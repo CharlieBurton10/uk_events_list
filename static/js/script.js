@@ -1,40 +1,26 @@
-/*
-    jQuery for MaterializeCSS initialization
-*/
-
+/*jshint esversion: 11 */
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
 });
 
+document.querySelectorAll('button.like').forEach(bttn=>{
+    bttn.addEventListener('click',function(e){
+      this.nextElementSibling.textContent=Number( this.nextElementSibling.textContent ) + 1;
+    });
+  })
 
+const getLike = document.querySelector('.like');
+const getLikeNum = document.querySelector('.likeNum');
 
+let like = 0;
 
-
-/*
-    vanilla JavaScript for MaterializeCSS initialization
-*/
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     let sidenavs = document.querySelectorAll(".sidenav");
-//     let sidenavsInstance = M.Sidenav.init(sidenavs, {edge: "right"});
-// });
-
-let likes = 0;
-$(document).ready(function () {
-  // ajax to get current likes
-  // let likes from server are 10
-  // assign the current likes to variable
-  likes = 1;
-  setLikes(likes);
-});
-
-$("body").on("click", ".likeBtn", function () {
-  // ajax to post a current likes
-  // in success add increment to likes
-  likes++;
-  setLikes(likes);
-});
-
-function setLikes(count) {
-  $(".totalLikes").text(count);
+increaseLike = () => {
+like ++
+getLikeNum.innerHTML = `${like}`
 }
+    
+likeClick = () => {
+increaseLike()
+}
+    
+getLike.addEventListener(('click'), likeClick)
