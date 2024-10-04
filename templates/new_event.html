@@ -5,7 +5,8 @@
     <div class="col s12 m8 offset-m2">
         <div class="card-panel indigo lighten-5">
             <h3 class="center-align indigo-text text-darken-4">Add New Event</h3>
-            <form method="POST" action="">
+            <form method="POST" action="{{ url_for('new_event') }}">
+                <!-- Category Selector -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-folder-open prefix indigo-text text-darken-4"></i>
@@ -66,13 +67,21 @@
                 <!-- Add Image URL -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fas fa-image prefix indigo-text text-darken-2"></i>
+                        <i class="fas fa-image prefix indigo-text text-darken-4"></i>
                         <input id="image" name="image" minlength="5" maxlength="200"
                             type="text" class="validate" required>
                         <label for="image">Image URL</label>
-                        <p class="indigo-text text-darken-2">Having trouble? Try searching for an image on the web, right click on it, 
+                        <p class="indigo-text text-darken-4">Having trouble? Try searching for an image on the web, right click on it, 
                             select 'open image in a new tab' and copy/paste the URL(the web address 
                             at the top of the page) above!</p>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large indigo darken-4 text-shadow">
+                            Add Event <i class="fas fa-plus-square right"></i>
+                        </button>
                     </div>
                 </div>
             </form>

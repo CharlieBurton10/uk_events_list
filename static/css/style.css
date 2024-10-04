@@ -41,12 +41,13 @@ section {
 .card .card-content {
     background-color: white;
 }
+
 .card .card-image img {
     height: 400px;
 }
 
 .card-height {
-    height: 550px;
+    height: 575px;
 }
 
 .event-card {
@@ -55,14 +56,9 @@ section {
     text-overflow: ellipsis;
 }
 
-.card h5 {
-    padding-bottom: 5px;
-}
 
 
-
-
-
+/*---------------------------------------------------------- new event */
 .dropdown-content li>a,.dropdown-content li>span {
     color: #d50000;
 }

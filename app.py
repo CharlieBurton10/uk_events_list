@@ -99,10 +99,24 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/new_event")
+@app.route("/new_event", methods=["GET", "POST"])
 def new_event():
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    if request.method == "POST":
+        event = {
+            "category_name": request.form.get("category_name"),
+            "event_name": request.form.get("event_name"),
+            "location": request.form.get("location"),
+            "date": request.form.get("date"),
+            "event_details": request.form.get("event_details"),
+            "link": request.form.get("link"),
+            "image": request.form.get("image"),
+            "created_by": session["user"]
+        }
+        mongo.db.events.insert_one(event)
+        flash("New Event Successfully Added")
+        return redirect(url_for("get_events"))
 
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("new_event.html", categories=categories)
 
 
