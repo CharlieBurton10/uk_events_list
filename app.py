@@ -99,6 +99,12 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/new_event")
+def new_event():
+
+    return render_template("new_event.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

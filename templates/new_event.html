@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel indigo lighten-5">
+            <h3 class="center-align indigo-text text-darken-4">Add New Event</h3>
+            <form method="POST" action="">
+                <!-- Add Event Name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-thumbtack prefix indigo-text text-darken-4"></i>
+                        <input id="event_name" name="event_name" minlength="5" maxlength="50" 
+                            type="text" class="validate" required>
+                        <label for="event_name">Event Name</label>
+                    </div>
+                </div>
+                <!-- Add Event Location -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-map-marked-alt prefix indigo-text text-darken-4"></i>
+                        <input id="location" name="location" minlength="5" maxlength="50" 
+                            type="text" class="validate" required>
+                        <label for="location">Event Location</label>
+                    </div>
+                </div>
+                <!-- Add Event Date -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-calendar-alt prefix indigo-text text-darken-4"></i>
+                        <input id="date" name="date" minlength="5" maxlength="50" 
+                            type="text" class="validate" required>
+                        <label for="date">Event Date</label>
+                    </div>
+                </div>
+                <!-- Add Event Details -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left prefix indigo-text text-darken-4"></i>
+                        <textarea id="event_details" name="event_details" minlength="5"
+                            maxlength="200" class="materialize-textarea validate" required></textarea>
+                        <label for="event_details">Event Details</label>
+                    </div>
+                </div>
+                <!-- Add Website Link -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-link prefix indigo-text text-darken-4"></i>
+                        <input id="link" name="link" minlength="5" maxlength="200" 
+                            type="text" class="validate" required>
+                        <label for="link">Website Link</label>
+                    </div>
+                </div>
+                <!-- Add Image URL -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-image prefix indigo-text text-darken-2"></i>
+                        <input id="image" name="image" minlength="5" maxlength="200"
+                            type="text" class="validate" required>
+                        <label for="image">Image URL</label>
+                        <p class="indigo-text text-darken-2">Having trouble? Try searching for an image on the web, right click on it, 
+                            select 'open image in a new tab' and copy/paste the URL(the web address 
+                            at the top of the page) above!</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
