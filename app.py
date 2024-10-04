@@ -101,8 +101,9 @@ def logout():
 
 @app.route("/new_event")
 def new_event():
+    categories = mongo.db.categories.find().sort("category_name", 1)
 
-    return render_template("new_event.html")
+    return render_template("new_event.html", categories=categories)
 
 
 if __name__ == "__main__":

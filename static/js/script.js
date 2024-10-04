@@ -1,6 +1,7 @@
 /*jshint esversion: 11 */
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
+    $("select").formSelect();
 });
 
 document.querySelectorAll('button.like').forEach(bttn=>{
@@ -22,5 +23,4 @@ getLikeNum.innerHTML = `${like}`
 likeClick = () => {
 increaseLike()
 }
-    
-getLike.addEventListener(('click'), likeClick)
+  

@@ -6,6 +6,18 @@
         <div class="card-panel indigo lighten-5">
             <h3 class="center-align indigo-text text-darken-4">Add New Event</h3>
             <form method="POST" action="">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-folder-open prefix indigo-text text-darken-4"></i>
+                        <select id="category_name" name="category_name" class="validate" required>
+                            <option value="" disabled selected>Choose your event Category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category_name">Event Category</label>
+                    </div>
+                </div>
                 <!-- Add Event Name -->
                 <div class="row">
                     <div class="input-field col s12">
