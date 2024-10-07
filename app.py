@@ -21,7 +21,17 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_events")
 def get_events():
-    events = mongo.db.events.find()
+    events = mongo.db.events.find().sort("date", 1)
+    return render_template("events.html", events=events)
+
+
+@app.route("/interested", methods=["POST"])
+def interested():
+    if request.method == "POST":
+        event = {
+            "interested": request.form.get("interested"),
+        }
+        mongo.db.events.insert_one(interested)
     return render_template("events.html", events=events)
 
 
