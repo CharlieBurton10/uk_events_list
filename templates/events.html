@@ -30,6 +30,8 @@
                     <p class="indigo-text text-darken-4">{{ event.event_details }}</p><br>
                     <p class="event-card indigo-text text-darken-4"><strong>Website: </strong><a href="{{ event.link }}">{{ event.event_name }}</a></p>
                     <p class="event-card indigo-text text-darken-4"><strong><em>Event created by: {{ event.created_by }}</em></strong></p>
+                    <a href="" class="btn-small btn-edit indigo lighten-1">Done</a>
+                    <a href="{{ url_for('edit_event', events_id=events._id) }}" class="btn-small btn-edit indigo darken-1">Edit</a>
                     </div>
                 </div>
             </div>

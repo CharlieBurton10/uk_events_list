@@ -57,6 +57,10 @@ section {
     text-overflow: ellipsis;
 }
 
+.btn-edit {
+    margin: 15px;
+}
+
 
 
 /*---------------------------------------------------------- new event */
