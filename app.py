@@ -11,9 +11,11 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
 
 mongo = PyMongo(app)
 
@@ -125,7 +127,7 @@ def new_event():
         mongo.db.events.insert_one(event)
         flash("New Event Successfully Added")
         return redirect(url_for("get_events"))
-
+        
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("new_event.html", categories=categories)
 

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3 class="center-align white-text text-darken-4">2025 Events</h3>
+<br>
 <div class="row">
     {% for event in events %}
         <div class="col s12 m6 l4">
@@ -13,7 +15,7 @@
                         <i class="fas fa-ellipsis-v right"></i>
                     </span>
                     <h5 class="event-card "><strong>{{ event.event_name }}</strong></h5>
-                    <p class="event-card"><strong>Date:</strong> {{ event.date }}</p>
+                    <p class="event-card"><strong>Date:</strong>  {{ event.date.strftime('%d %B, %Y') }}</p>
                     <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
                     <div class="right">
                         <p>Interested? <button class="like btn-small btn-floating waves-effect waves-light indigo darken-4">

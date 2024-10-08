@@ -3,8 +3,8 @@ $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $("select").formSelect();
     $(".datepicker").datepicker({
-      format: "dd mmmm yyyy",
-      yearRange: 3,
+      format: "dd mmmm, yyyy",
+      yearRange: 1,
       showClearBtn: true,
       i18n: {
           done: "Select"
@@ -58,5 +58,6 @@ getinterested.innerHTML = `${like}`
 likeClick = () => {
 increaseLike()
 }
+
 
   
