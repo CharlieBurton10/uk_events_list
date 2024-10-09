@@ -2,13 +2,6 @@
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $("select").formSelect();
-    $(".datepicker").datepicker({
-      format: "dd mmmm, yyyy",
-      yearRange: 1,
-      showClearBtn: true,
-      i18n: {
-          done: "Select"
-      }
   });
   validateMaterializeSelect();
   function validateMaterializeSelect() {
@@ -37,7 +30,6 @@ $(document).ready(function () {
           }
       });
   }
-});
 
 document.querySelectorAll('button.like').forEach(bttn=>{
     bttn.addEventListener('click',function(e){
@@ -58,6 +50,5 @@ getinterested.innerHTML = `${like}`
 likeClick = () => {
 increaseLike()
 }
-
 
   

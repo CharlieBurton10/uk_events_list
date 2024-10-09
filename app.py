@@ -4,10 +4,6 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
-rndId="1234"
-collection.find_one({"_id": ObjectId(rndId)
-
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -136,12 +132,13 @@ def new_event():
     return render_template("new_event.html", categories=categories)
 
 
-@app.route("/edit_event/<events_id>", methods=["GET", "POST"])
-def edit_event(events_id):
-    events = mongo.db.events.find_one({"_id": ObjectId(events_id)})
+@app.route("/edit_event/<event_id>", methods=["GET", "POST"])
+def edit_event(event_id):
+    print(event_id)
+    event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_event.html", events=events, categories=categories)
+    return render_template("edit_event.html", event=event, categories=categories)
 
 
 if __name__ == "__main__":
