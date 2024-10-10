@@ -23,15 +23,15 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_events")
 def get_events():
-    events = mongo.db.events.find().sort("date", 1)
+    events = list(mongo.db.events.find().sort("date", 1))
     return render_template("events.html", events=events)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
-    return render_template("tasks.html", tasks=tasks)
+    events = list(mongo.db.events.find({"$text": {"$search": query}}))
+    return render_template("events.html", events=events)
 
 
 @app.route("/interested/<event_id>", methods=["GET", "POST"])

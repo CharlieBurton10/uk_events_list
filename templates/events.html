@@ -1,65 +1,68 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align white-text text-darken-4">2025 Events</h3>
-<br>
-<div class="row card-panel indigo lighten-5">
-    <form action="{{ url_for('search') }}" method="post" class="col s12">
-        <div class="row valign-wrapper center-align">
-            <div class="input-field col s12 m8">
-                <i class="fas fa-search prefix indigo darken-4"></i>
-                <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                <label for="query">Search Tasks</label>
+    <div class="row card-panel indigo lighten-5">
+        <h3 class="center-align indigo-text text-darken-4">2025 Events</h3>
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix indigo darken-4"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Tasks</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_events') }}" class="red darken-4 btn text-shadow">Reset</a>
+                    <button type="submit" class="indigo darken-4 btn text-shadow">
+                        <i class="fas fa-search left"></i> Search
+                    </button>
+                </div>
             </div>
-            <div class="col s12 m4">
-                <a href="{{ url_for('get_events') }}" class="red darken-4 btn text-shadow">Reset</a>
-                <button type="submit" class="indigo darken-4 btn text-shadow">
-                    <i class="fas fa-search left"></i> Search
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
-<div class="row">
-    {% for event in events %}
-        <div class="col s12 m6 l4">
-            <div class="card card-height">
-                <div class="card-image transparent circle responsive-img waves-effect waves-block">
-                <img class="activator" src="{{ event.image }}" alt="{{ event.event_name}}">
-                </div>
-                <div class="card-content indigo-text text-darken-4">
-                    <span class="card-title activator button-floating halfway-fab indigo-text text-darken-4">
-                        <i class="fas fa-ellipsis-v right"></i>
-                    </span>
-                    <h5 class="event-card "><strong>{{ event.event_name }}</strong></h5>
-                    <p class="event-card"><strong>Date:</strong>  {{ event.date }}</p>
-                    <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
-                    <div class="left">
-                        <a href="{{ url_for('profile', username=session['user']) }}" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <div class="row">
+        {% if events|length > 0 %}
+            {% for event in events %}
+                <div class="col s12 m6 l4">
+                    <div class="card card-height">
+                        <div class="card-image transparent circle responsive-img waves-effect waves-block">
+                            <img class="activator" src="{{ event.image }}" alt="{{ event.event_name}}">
+                        </div>
+                        <div class="card-content indigo-text text-darken-4">
+                            <span class="card-title activator button-floating halfway-fab indigo-text text-darken-4">
+                                <i class="fas fa-ellipsis-v right"></i>
+                            </span>
+                            <h5 class="event-card "><strong>{{ event.event_name }}</strong></h5>
+                            <p class="event-card"><strong>Date:</strong>  {{ event.date }}</p>
+                            <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
+                            <div class="left">
+                                <a href="{{ url_for('profile', username=session['user']) }}" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+                            </div>
+                            <div class="right">
+                                {% if session.user|lower %}
+                                    <p>Interested? <button id=one-use class="like btn-small btn-floating waves-effect waves-light indigo darken-4">
+                                        <i class="far fa-thumbs-up"></i></button>
+                                        <span class="interested">0</span>
+                                    </p>
+                                {% endif %}
+                            </div>
+                            <br>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title indigo-text text-darken-4"><i class="material-icons right indigo-text text-darken-4 far fa-window-close"></i><h5><strong>{{ event.event_name }}</strong></h5></span>
+                            <p class="indigo-text text-darken-4">{{ event.event_details }}</p><br>
+                            <p class="event-card indigo-text text-darken-4"><strong>Website: </strong><a href="{{ event.link }}">{{ event.event_name }}</a></p>
+                            <p class="event-card indigo-text text-darken-4"><strong><em>Event created by: {{ event.created_by }}</em></strong></p>
+                            {% if session.user|lower == event.created_by|lower %}
+                                <a href="{{ url_for('delete_event', event_id=event._id) }}" class="btn-small btn-edit red darken-4">Delete</a>
+                                <a href="{{ url_for('edit_event', event_id=event._id) }}" class="btn-small btn-edit indigo darken-4">Edit</a>
+                            {% endif %}
+                        </div>
                     </div>
-                    <div class="right">
-                        {% if session.user|lower %}
-                            <p>Interested? <button id=one-use class="like btn-small btn-floating waves-effect waves-light indigo darken-4">
-                                <i class="far fa-thumbs-up"></i></button>
-                                <span class="interested">0</span>
-                            </p>
-                        {% endif %}
-                    </div>
-                    <br>
                 </div>
-                <div class="card-reveal">
-                    <span class="card-title indigo-text text-darken-4"><i class="material-icons right indigo-text text-darken-4 far fa-window-close"></i><h5><strong>{{ event.event_name }}</strong></h5></span>
-                    <p class="indigo-text text-darken-4">{{ event.event_details }}</p><br>
-                    <p class="event-card indigo-text text-darken-4"><strong>Website: </strong><a href="{{ event.link }}">{{ event.event_name }}</a></p>
-                    <p class="event-card indigo-text text-darken-4"><strong><em>Event created by: {{ event.created_by }}</em></strong></p>
-                    {% if session.user|lower == event.created_by|lower %}
-                        <a href="{{ url_for('delete_event', event_id=event._id) }}" class="btn-small btn-edit red darken-4">Delete</a>
-                        <a href="{{ url_for('edit_event', event_id=event._id) }}" class="btn-small btn-edit indigo darken-4">Edit</a>
-                    {% endif %}
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <h3 class="white-text text-darken-4 indigo darken-4 center-align">No Results Found</h3>
+        {% endif %}   
     </div>
 {% endblock %}
