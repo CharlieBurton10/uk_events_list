@@ -7,6 +7,31 @@
                 <h3 class="center-align indigo-text text-darken-4">
                     {{ username }}'s Profile
                 </h3>
+                <ul class="collapsible">
+                    {% for event in events %}
+                    <li>
+                        <div class="collapsible-header white-text indigo darken-4 text-shadow"><i class="fas fa-caret-down">
+                            <div class="col s9">
+                                <strong>{{ event.event_name }}</strong></i>
+                            </div>
+                            <div class="col s3">
+                                <strong>{{ event.date }}</strong></i>
+                            </div>
+                        </div>
+                        <div class="collapsible-body indigo-text text-darken-4">
+                            <p>{{ event.location }}</p>
+                        </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    {% endfor %}
+                  </ul>
             </div>
         </div>
     </div>

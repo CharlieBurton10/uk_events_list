@@ -27,14 +27,15 @@ def get_events():
     return render_template("events.html", events=events)
 
 
-@app.route("/interested", methods=["POST"])
-def interested():
+@app.route("/interested/<event_id>", methods=["GET", "POST"])
+def interested(event_id):
     if request.method == "POST":
-        event = {
-            "interested": request.form.get("interested"),
-        }
-        mongo.db.events.insert_one(interested)
-    return render_template("events.html", events=events)
+        like = {"$set": {
+          "interested": request.form.get("interested")
+        }}
+        mongo.db.events.update_one({"_id": ObjectId(event_id)}, like)
+        flash("Event Successfully Updated")
+    return render_template("events.html", event=event)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -151,6 +152,13 @@ def edit_event(event_id):
     event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_event.html", event=event, categories=categories)
+
+
+@app.route("/delete_event/<event_id>")
+def delete_event(event_id):
+    mongo.db.events.delete_one({"_id": ObjectId(event_id)})
+    flash("Event Successfully Deleted")
+    return redirect(url_for("get_events"))
 
 
 if __name__ == "__main__":

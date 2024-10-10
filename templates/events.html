@@ -17,11 +17,16 @@
                     <h5 class="event-card "><strong>{{ event.event_name }}</strong></h5>
                     <p class="event-card"><strong>Date:</strong>  {{ event.date }}</p>
                     <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
+                    <div class="left">
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    </div>
                     <div class="right">
-                        <p>Interested? <button class="like btn-small btn-floating waves-effect waves-light indigo darken-4">
-                            <i class="far fa-thumbs-up"></i></button>
-                            <span class="interested">0</span>
-                        </p>
+                        {% if session.user|lower %}
+                            <p>Interested? <button id=one-use class="like btn-small btn-floating waves-effect waves-light indigo darken-4">
+                                <i class="far fa-thumbs-up"></i></button>
+                                <span class="interested">0</span>
+                            </p>
+                        {% endif %}
                     </div>
                     <br>
                 </div>
@@ -31,7 +36,7 @@
                     <p class="event-card indigo-text text-darken-4"><strong>Website: </strong><a href="{{ event.link }}">{{ event.event_name }}</a></p>
                     <p class="event-card indigo-text text-darken-4"><strong><em>Event created by: {{ event.created_by }}</em></strong></p>
                     {% if session.user|lower == event.created_by|lower %}
-                        <a href="" class="btn-small btn-edit red darken-4">Done</a>
+                        <a href="{{ url_for('delete_event', event_id=event._id) }}" class="btn-small btn-edit red darken-4">Done</a>
                         <a href="{{ url_for('edit_event', event_id=event._id) }}" class="btn-small btn-edit indigo darken-4">Edit</a>
                     {% endif %}
                     </div>
