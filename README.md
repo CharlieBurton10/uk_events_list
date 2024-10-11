@@ -115,4 +115,14 @@ I have used Fredoka from Google Fonts for this website. I like the round font an
 
 ### Imagery
 
-The background image has been been pick for it's classic look. I have credited this at the end.
+The background image has been picked for it's patriotic look. I have credited this at the end.
+
+### Wireframes
+
+Wireframes were created for mobile, tablet and desktop.
+
+![Home Page Wireframe](docs/wireframes/home.png)
+![Login / Register Page Wireframe](docs/wireframes/login_register.png)
+![Add / Edit Event Page Wireframe](docs/wireframes/add_editevent.png)
+![Manage Categories Page Wireframe](docs/wireframes/managecategories.png)
+![Add / Edit Category Page Wireframe](docs/wireframes/add_editcategory.png)
