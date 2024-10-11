@@ -40,6 +40,7 @@ ___
   * [Local Development](#local-development)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
+  * [Creating an App with the Heroku](#creating-an-app-with-the-heroku)
 
 * [Testing](#testing)
   * [W3C Validator](#w3c-validator)
@@ -126,3 +127,184 @@ Wireframes were created for mobile, tablet and desktop.
 ![Add / Edit Event Page Wireframe](docs/wireframes/add_editevent.png)
 ![Manage Categories Page Wireframe](docs/wireframes/managecategories.png)
 ![Add / Edit Category Page Wireframe](docs/wireframes/add_editcategory.png)
+
+## Features
+
+The website is comprised of:
+1. Home Events page
+    * Shows the events.
+    * Has a Search feature.
+    * Can only edit/delete reviews as admin or the creator of the event.
+2. Register page
+    * Allows the user to register.
+    * If already registered it sends them to the login page.
+3. Login page
+    * Allows the user to login.
+    * If not registered it sends them to the register page.
+4. New event page
+    * For users to add new events.
+5. Edit event page
+    * For users to edit events.
+6. Manage Categories page
+    * For admin to view categories.
+7. Edit Category page
+    * For admin to edit category.
+8. New Category page
+    * For admin to create new category.
+9. 404.html
+    * Redirects the user back to events.html to prevent them having to press the browser back button for better experience.
+
+### General features on each page
+
+All Pages on the website are responsive and have:
+
+* A favicon in the browser tab.
+
+![Favicon](docs/favicon.png)
+
+* All Pages on the website have:
+  * Logo
+
+    ![logo](docs/logo.png)
+
+  * To the right of the navigation bar are the links to the websites pages. 
+
+    ![Nav](docs/nav.png)
+
+    or collapsed for tablets and mobiles.
+
+    ![Mobile Nav](docs/mobilenav.png)
+
+    ![Mobile Nav](docs/mobilenav2.png)
+
+  * In the middle is the Title.
+
+    ![Title](docs/title.png)
+
+  * Flash messages on all pages for different messages.
+
+    ![Flash](docs/flash.png)
+
+  * A footer which contains social media icon links to Facebook, Instagram and Twitter. 
+
+    ![Footer](docs/footer.png)
+  
+### Future Implementations
+
+* Add next 5 years.
+* Store past events for reference.
+
+### Accessibility
+
+ * I have made sure there is colour contrast on the site. 
+ 
+ * I have used a hover state on all buttons on the site to make it clear to the user if they are hovering over a button.
+
+## Technologies Used
+
+### Languages Used
+
+* HTML, CSS and JavaScript were used to create this website.
+
+### Frameworks, Libraries & Programs Used
+
+* [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+
+* [Git](https://git-scm.com/) - For version control.
+
+* [Github](https://github.com/) - To save and store the files for the website.
+
+* [GitPod](https://gitpod.io/) - IDE used to create the site.
+
+* [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
+
+* [jQuery](https://jquery.com/) - A JavaScript library.
+
+* [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
+
+* [TinyPNG](https://tinypng.com/) To compress image.
+
+* [Image Resizer](https://imageresizer.com/) To resize image.
+
+* [Favicon.io](https://favicon.io/) To create favicon.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/) To show the website image on a range of devices.
+
+* [Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - a google chrome extension that allows you to spell check your webpage. Used to check the site and the readme for spelling errors.
+
+## Deployment & Local Development
+
+### Deployment 
+
+Github Pages was used to deploy the live website. The instructions to achieve this are below:
+
+1. Log in to Github.
+2. Find the repository for this project, uk_event_list.
+3. Click on the Settings button.
+4. Click on the Pages button in the left hand side bar.
+5. In the Source section, choose main from the drop down select branch menu. Select Root from the drop down select folder menu.
+6. Click Save. Your live Github Pages site is now deployed at the URL shown.
+
+### Local Development
+
+The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
+
+#### How to Fork
+
+To fork classicalmusicquiz repository:
+
+1. Log in to Github.
+2. Go to the repository for this project, CharlieBurton10/uk_event_list
+3. Click the Fork button at the top of the page between Watch and Starred.
+
+#### How to Clone
+
+To clone uk_event_list repository:
+
+1. Log in to Github.
+2. Go to the repository for this project, CharlieBurton10/uk_event_list
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then enter.
+6. Then paste link from step 3 ($ git clone https://github.com/CharlieBurton10/uk_event_list) and then press enter.
+
+### Creating an App with the Heroku :
+
+1. Navigate to [Heroku.com](https://www.heroku.com/).
+2. Create a new account or login.
+3. Click the **new** button, then **create new app** button.
+4. Choose your app name and the region and click **create app**.
+
+#### Connecting your Heroku account to your Github repository :
+
+1. In your app choose **Deploy** tab and choose *Github* as your deployment method. 
+2. Enter the GitHub repository name and click on *Search*.
+3. Once the correct repository is found, click on *Connect*.
+
+#### Setting you enviroment variables  :
+
+1. Navigate to **Settings** tab and click on *Reveal Config Vars* and set following variables :
+
+- DATABASE_URL : URL to your databse
+- DEBUG : Can be set to true but **ONLY** during development. It's extremely important to change it to false once development process is over.
+- IP : 0.0.0.0
+- PORT : 5000
+- SECRET_KEY : Your custom secret key.
+
+**PLEASE NOTE THAT YOU SHOULD NEVER SHARE ABOVE DETAILS WITH ANYONE DUE TO THE SECURITY REASONS!**
+
+**IMPORTANT** *In order to successfully deploy your project to Heroku, you must include requirements.txt and Procfile files.* 
+
+The following commands in the Gitpod CLI will create the relevant files :
+
+`pip3 freeze --local > requirements.txt`
+
+`echo web: python app.py > Procfile`
+
+## Testing
+
+Testing has been on going throughout the build with Chrome developer tools.
+
+### W3C Validator
+
+The W3C validator was used to validate the HTML on all pages of the website. It was also used to validate CSS in the style.css file.
