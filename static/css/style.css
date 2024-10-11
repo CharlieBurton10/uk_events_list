@@ -81,3 +81,30 @@ section {
     text-align: center;
 }
 
+/* ----------------------------------------Media */
+@media screen and (max-width: 800px) {
+
+    body {
+        height: 40vh;
+    }
+
+    .footer {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+  body {
+      height: 60vh;
+  }
+
+  .footer {
+    margin-top: 0px;
+    font-size: small;
+  }
+    h3 {
+    font-size: 20px;
+ }
+}
+
