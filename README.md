@@ -133,8 +133,21 @@ Wireframes were created for mobile, tablet and desktop.
 The website is comprised of:
 1. Home Events page
     * Shows the events.
+
+    ![events](docs/events.png)
+
+    ![events2](docs/events2.png)
+
+    ![events3](docs/events3.png)
+
     * Has a Search feature.
+
+    ![search](docs/search.png)
+
     * Can only edit/delete reviews as admin or the creator of the event.
+
+    ![editdelete](docs/editdelete.png)
+    
 2. Register page
     * Allows the user to register.
     * If already registered it sends them to the login page.
