@@ -25,6 +25,7 @@ ___
   * [Typography](#typography)
   * [Imagery](#imagery)
   * [Wireframes](#wireframes)
+  * [Database Structure](#database-structure)
 
 * [Features](#features)
   * [General Features on Each Page](#general-features-on-each-page)
@@ -127,6 +128,21 @@ Wireframes were created for mobile, tablet and desktop.
 ![Add / Edit Event Page Wireframe](docs/wireframes/add_editevent.png)
 ![Manage Categories Page Wireframe](docs/wireframes/managecategories.png)
 ![Add / Edit Category Page Wireframe](docs/wireframes/add_editcategory.png)
+
+### Database Structure
+
+![Database](docs/database.png)
+
+I first created a database structure and from this I decide to use a non relational database for this project and used a schemaless database called MongoDB. So I first created the database and added three collections for each table in my database structure.
+
+![Mongodb](docs/mongodb.png)
+
+#### Database tables
+
+The first table is categories to group all the different events in to key categories to separate them. 
+
+![Categories](docs/categories.png)
+
 
 ## Features
 

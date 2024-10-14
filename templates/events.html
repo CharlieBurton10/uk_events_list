@@ -54,8 +54,8 @@
                             <p class="event-card indigo-text text-darken-4"><strong>Website: </strong><a href="{{ event.link }}">{{ event.event_name }}</a></p>
                             <p class="event-card indigo-text text-darken-4"><strong><em>Event created by: {{ event.created_by }}</em></strong></p>
                             {% if session.user|lower == event.created_by|lower %}
-                                <a href="{{ url_for('delete_event', event_id=event._id) }}" class="btn-small btn-edit red darken-4">Delete</a>
-                                <a href="{{ url_for('edit_event', event_id=event._id) }}" class="btn-small btn-edit indigo darken-4">Edit</a>
+                            <a href="{{ url_for('delete_event', event_id=event._id) }}" class="btn-small btn-edit red darken-4">Delete</a>
+                            <a href="{{ url_for('edit_event', event_id=event._id) }}" class="btn-small btn-edit indigo darken-4">Edit</a>
                             {% endif %}
                         </div>
                     </div>
@@ -65,4 +65,5 @@
             <h3 class="white-text text-darken-4 indigo darken-4 center-align">No Results Found</h3>
         {% endif %}   
     </div>
+
 {% endblock %}

@@ -33,18 +33,6 @@ def search():
     events = list(mongo.db.events.find({"$text": {"$search": query}}))
     return render_template("events.html", events=events)
 
-
-@app.route("/interested/<event_id>", methods=["GET", "POST"])
-def interested(event_id):
-    if request.method == "POST":
-        like = {"$set": {
-          "interested": request.form.get("interested")
-        }}
-        mongo.db.events.update_one({"_id": ObjectId(event_id)}, like)
-        flash("Event Successfully Updated")
-    return render_template("events.html", event=event)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

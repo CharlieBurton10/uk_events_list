@@ -13,14 +13,14 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #1a237e;
-}
-
-section {
     background-image: url(../images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+section {
+
     border: none;
     opacity: 0.9;
     padding: 110px;
@@ -63,11 +63,11 @@ section {
 }
 
 .card .card-image img {
-    height: 400px;
+    height: 250px;
 }
 
 .card-height {
-    height: 575px;
+    height: 400px;
 }
 
 .event-card {
