@@ -41,6 +41,7 @@ $(document).ready(function () {
 document.querySelectorAll('button.like').forEach(bttn=>{
     bttn.addEventListener('click',function(e){
         this.nextElementSibling.textContent=Number( this.nextElementSibling.textContent ) + 1;
+        bttn.disabled = true;
     });
   })
 
@@ -57,9 +58,3 @@ getinterested.innerHTML = `${like}`
 likeClick = () => {
 increaseLike()
 }
-
-let oneUseButton = document.getElementById('one-use');
-
-oneUseButton.addEventListener('click', () => {
-  oneUseButton.disabled = true;
-});

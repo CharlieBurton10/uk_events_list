@@ -9,11 +9,11 @@
                     <div class="row valign-wrapper center-align">
                         <div class="input-field col s12 m8">
                             <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                            <label for="query">Search Tasks</label>
+                            <label class="indigo-text text-darken-4" for="query"><strong>Search Tasks</strong></label>
                         </div>
                         <div class="col s12 m4">
                             <a href="{{ url_for('get_events') }}" class="red darken-4 btn text-shadow">Reset</a>
-                            <button type="submit" class="indigo darken-4 btn text-shadow">
+                            <button type="submit" class="indigo darken-4 btn text-shadow" aria-label="Search submit button">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
@@ -40,7 +40,7 @@
                             <p class="event-card"><strong>Location:</strong> {{ event.location }}</p>
                             <div class="right">
                                 {% if session.user|lower %}
-                                    <p>Interested? <button id=one-use class="like btn-small btn-floating waves-effect waves-light indigo darken-4">
+                                    <p>Interested? <button id=one-use class="like btn-small btn-floating waves-effect waves-light indigo darken-4" aria-label="Are you interested in the event?">
                                         <i class="far fa-thumbs-up"></i></button>
                                         <span class="interested">0</span>
                                     </p>
@@ -54,7 +54,6 @@
                             <p class="event-card indigo-text text-darken-4"><strong>Website: </strong><a href="{{ event.link }}">{{ event.event_name }}</a></p>
                             <p class="event-card indigo-text text-darken-4"><strong><em>Event created by: {{ event.created_by }}</em></strong></p>
                             {% if session.user|lower == event.created_by|lower %}
-                            <!-- <a href="{{ url_for('delete_event', event_id=event._id) }}" class="btn-small btn-edit red darken-4">Delete</a> -->
                             <a href="#deleteevent" data-event-id="{{ event._id }}" class="btn modal-trigger delete-btn red darken-4">Delete</button>
                             <a href="{{ url_for('edit_event', event_id=event._id) }}" class="btn-small btn-edit indigo darken-4">Edit</a>
                             {% endif %}

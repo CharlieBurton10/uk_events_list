@@ -24,7 +24,7 @@
         <!-- top navbar -->
         <nav class="nav-wrapper text-shadow indigo darken-4">
             <a href="{{ url_for('get_events') }}" class="brand-logo">UK Events</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right" aria-label="Mobile Navgation Bar"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_events') }}">Home</a></li>
                 {% if session.user %}
