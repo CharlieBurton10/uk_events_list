@@ -143,6 +143,7 @@ The first table is categories to group all the different events in to key catego
 
 ![Categories](docs/categories.png)
 
+The second table is hold users
 
 ## Features
 
