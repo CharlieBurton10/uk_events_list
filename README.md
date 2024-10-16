@@ -91,7 +91,6 @@ The known limitation is the UK Events website currently just forcuses on next ye
 * I want to be able to navigate the site easily to find information.
 * I want to be able to find their social media pages.
 * I want the website to be responsive to whichever device I am using.
-* I want to learn about new events coming up.
 * I want to be able to register to add my own events.
 
 #### Returning/Frequent Visitor Goals
@@ -349,3 +348,60 @@ Testing has been on going throughout the build with Chrome developer tools.
 ### W3C Validator
 
 The W3C validator was used to validate the HTML on all pages of the website. It was also used to validate CSS in the style.css file.
+
+[Home Page HTML](docs/testing/w3chome.png) - Passed
+
+[Login Page HTML](docs/testing/w3clogin.pgn) - Passed
+
+[Register Page HTML](docs/testing/w3cregister.pgn) - Passed
+
+[Profile Page HTML](docs/testing/w3cprofile.pgn) - 
+
+[New Event Page HTML](docs/testing/w3cnew_event.pgn) - Passed
+
+[Edit Event Page HTML](docs/testing/w3cnew_event.pgn) - 3 errors with 'No space between attributes'. This has no been resolved with spaces being added.
+
+[Manage Categories Page HTML](docs/testing/w3cget_catergories.png) - Passed
+
+[New Category Page HTML](docs/testing/w3cgnew_catergory.png) - Passed
+
+[Edit Category Page HTML](docs/testing/w3cget_catergory.png) - Passed
+
+[404 Page HTML](docs/testing/w3c404.png) - 
+
+[CSS](docs/testing/w3ccss.png) - Passed
+
+[JQuery Validator](docs/testing/jqueryvalidator.png) - JQuery is valid
+
+[app.py](docs/testing/app_py.png): No errors were returned when passing through CI Python Linter
+
+### Testing User Stories
+
+#### First Time Visitor Goals
+
+* I want to be able view events.
+  * The home page shows the event cards that have been added.
+
+  ![Home](docs/home.png)
+* I want to be able to navigate the site easily to find information.
+  * All site navigation is in the top right corner on every page of the website.
+
+  ![Nav](docs/nav.png)
+* I want to be able to find their social media pages.
+  * In the footer on every page sits links to the social media pages.
+
+  ![Social Media links](docs/footer.png)
+* I want the website to be responsive to whichever device I am using.
+  * I have checked that the website is responsive on multiple devices.
+
+* I want to be able to register to add my own events.
+  * The user can register and then add their own event.
+
+  ![Register](docs/register.png)
+
+#### Returning/Frequent Visitor Goals
+
+* I want to be able to log in to my account.
+* I want to be able to introduce more users to my events coming up to increase attendances.
+* I want to be able to edit my own events.
+* I want to be able to delete my own events.

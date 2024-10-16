@@ -33,6 +33,7 @@ def search():
     events = list(mongo.db.events.find({"$text": {"$search": query}}))
     return render_template("events.html", events=events)
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -43,7 +44,6 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
@@ -54,7 +54,6 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
-
     return render_template("register.html")
 
 
@@ -69,21 +68,19 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
-
         else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
-
     return render_template("login.html")
 
 
@@ -92,13 +89,11 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-        
     if session["user"]:
         events = list(mongo.db.events.find(
             {"created_by": username}))
         return render_template(
             "profile.html", username=username, events=events)
-
     return redirect(url_for("login"))
 
 
@@ -107,7 +102,6 @@ def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    
     return redirect(url_for("login"))
 
 
@@ -127,7 +121,6 @@ def new_event():
         mongo.db.events.insert_one(event)
         flash("New Event Successfully Added")
         return redirect(url_for("get_events"))
-        
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("new_event.html", categories=categories)
 
@@ -150,7 +143,8 @@ def edit_event(event_id):
 
     event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_event.html", event=event, categories=categories)
+    return render_template
+    ("edit_event.html", event=event, categories=categories)
 
 
 @app.route("/delete_event/<event_id>")
@@ -175,7 +169,6 @@ def new_category():
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
         return redirect(url_for("get_categories"))
-
     return render_template("new_category.html")
 
 
@@ -188,7 +181,6 @@ def edit_category(category_id):
         mongo.db.categories.update_one({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
-
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
@@ -202,8 +194,8 @@ def delete_category(category_id):
 
 @app.errorhandler(404)
 def not_found(error):
-    return render_template('404.html', error=error), 404
-   
+    return render_template("404.html", error=error), 404
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

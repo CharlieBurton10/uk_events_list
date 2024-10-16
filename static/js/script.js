@@ -43,18 +43,14 @@ document.querySelectorAll('button.like').forEach(bttn=>{
         this.nextElementSibling.textContent=Number( this.nextElementSibling.textContent ) + 1;
         bttn.disabled = true;
     });
-  })
+  });
 
-const getLike = document.querySelector('.like');
 const getinterested = document.querySelector('.interested');
 
 let like = 0;
 
-increaseLike = () => {
-like ++
-getinterested.innerHTML = `${like}`
-}
+let increaseLike = () => {
+    like ++;
+    getinterested.innerHTML = `${like}`;
+};
     
-likeClick = () => {
-increaseLike()
-}
