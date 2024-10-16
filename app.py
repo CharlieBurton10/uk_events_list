@@ -198,6 +198,11 @@ def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error), 404
    
 
 if __name__ == "__main__":

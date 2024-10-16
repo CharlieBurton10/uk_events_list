@@ -133,6 +133,8 @@ Wireframes were created for mobile, tablet and desktop.
 
 ![Database](docs/database.png)
 
+#### Database Schema
+
 I first created a database structure and from this I decide to use a non relational database for this project and used a schemaless database called MongoDB. So I first created the database and added three collections for each table in my database structure.
 
 ![Mongodb](docs/mongodb.png)
@@ -143,7 +145,13 @@ The first table is categories to group all the different events in to key catego
 
 ![Categories](docs/categories.png)
 
-The second table is hold users
+The second table holds the users for the website and their passwords to allow login.
+
+![Users](docs/users.png)
+
+The third table has the information for each event. It hold 9 fields that comprise of _Id, category_name, event_name, event_details, location, date, link, image and created_by. 
+
+![Events MongoDB](docs/eventsmongodb.png)
 
 ## Features
 
@@ -151,19 +159,21 @@ The website is comprised of:
 1. Home Events page
     * Shows the events.
 
-    ![events](docs/events.png)
+    ![Events Card](docs/events.png)
 
-    ![events2](docs/events2.png)
+    ![Events Card 2](docs/events2.png)
 
-    ![events3](docs/events3.png)
+    ![Events Card 3](docs/events3.png)
 
     * Has a Search feature.
 
-    ![search](docs/search.png)
+    ![Search](docs/search.png)
 
     * Can only edit/delete reviews as admin or the creator of the event.
 
-    ![editdelete](docs/editdelete.png)
+    ![Edit and Delete](docs/editdelete.png)
+
+    ![Delete Modal](docs/delete.png)
     
 2. Register page
     * Allows the user to register.
@@ -183,6 +193,7 @@ The website is comprised of:
     * For admin to create new category.
 9. 404.html
     * Redirects the user back to events.html to prevent them having to press the browser back button for better experience.
+    ![404 error page](docs/404.png)
 
 ### General features on each page
 
