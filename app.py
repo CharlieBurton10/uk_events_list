@@ -143,8 +143,7 @@ def edit_event(event_id):
 
     event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template
-    ("edit_event.html", event=event, categories=categories)
+    return render_template ("edit_event.html", event=event, categories=categories)
 
 
 @app.route("/delete_event/<event_id>")

@@ -399,9 +399,27 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 
   ![Register](docs/register.png)
 
+  ![Add New Event](docs/addnewevent.png)
+
 #### Returning/Frequent Visitor Goals
 
 * I want to be able to log in to my account.
-* I want to be able to introduce more users to my events coming up to increase attendances.
+  * I have added a log in page so returning visitors can log back in.
+
+  ![Log In](docs/login.png)
+* I want to be able to introduce more users to my events coming up to increase attendance.
+  * In the footer on every page sits links to the social media pages to spread the website and events on the website to increase attendance.
+
+  ![Social Media links](docs/footer.png)
 * I want to be able to edit my own events.
+  * I have added on each event card an edit button thats sends them to an edit page.
+
+  ![Event Card](docs/events3.png)
+
+  ![Edit Event](docs/editevent.png)
 * I want to be able to delete my own events.
+  * I have added on each event card a delete button thats sends them to a delete modal before deleting.
+
+  ![Delete button](docs/editdelete.png)
+
+  ![Delete Modal](docs/delete.png)
