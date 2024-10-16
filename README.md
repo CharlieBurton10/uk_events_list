@@ -423,3 +423,21 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
   ![Delete button](docs/editdelete.png)
 
   ![Delete Modal](docs/delete.png)
+
+### Performance Testing
+
+[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) was used to measure the performance and speed of the website. 
+
+|     Page      |     Mobile    |    Desktop    |
+| ------------  | ------------- | ------------- |
+|  events.html  |    [Result](docs/testing/lighthouse/eventsmobile.png)   |    [Result](docs/testing/lighthouse/eventsdesktop.png)  | 
+|  login.html    |    [Result](docs/testing/lighthouse/loginmobile.png)    |    [Result](docs/testing/lighthouse/logindesktop.png)   | 
+|  register.html     |    [Result](docs/testing/lighthouse/registermobile.png)     |    [Result](docs/testing/lighthouse/registerdesktop.png)    |  
+|  profile.html |    [Result](docs/testing/lighthouse/profilemobile.png) |    [Result](docs/testing/lighthouse/profiledesktop.png)  | 
+
+
+### Further Testing
+
+ * The website was tested on Google Chrome, Safari and Microsoft Edge browsers.
+ * The website was tested on multiple devices: Desktop, Mackbook 14inch, iPad Pro and iPhone 14.
+ * All browsers and devices were tested on all pages to make sure all the pages and links are working properly.

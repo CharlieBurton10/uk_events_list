@@ -128,5 +128,24 @@ section {
     nav .brand-logo {
         font-size: medium;
     }
+
+    .card .card-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .page-footer {
+        max-width: 100%;
+    }
+
+    body {
+        background-image: url(../images/background.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: auto;
+    }
+
 }
 
