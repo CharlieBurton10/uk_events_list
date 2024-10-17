@@ -19,6 +19,10 @@ body {
     background-size: cover;
 }
 
+nav ul a:hover {
+    background-color: #b71c1c;
+}
+
 section {
 
     border: none;
@@ -145,6 +149,10 @@ section {
         background-size: cover;
         width: 100%;
         height: auto;
+    }
+
+    p {
+        font-size: smaller;
     }
 
 }

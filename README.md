@@ -130,6 +130,8 @@ Wireframes were created for mobile, tablet and desktop.
 
 ### Database Structure
 
+[DB Diagram](https://dbdiagram.io/d) was used to creat my database structure.
+
 ![Database](docs/database.png)
 
 #### Database Schema
@@ -177,21 +179,43 @@ The website is comprised of:
 2. Register page
     * Allows the user to register.
     * If already registered it sends them to the login page.
+
+    ![Register](docs/register.png)
+
 3. Login page
     * Allows the user to login.
     * If not registered it sends them to the register page.
+
+    ![Login](docs/login.png)
+
 4. New event page
     * For users to add new events.
+
+    ![New Event](docs/addnewevent.png)
+
 5. Edit event page
     * For users to edit events.
+
+    ![Edit Event](docs/editevent.png)
+
 6. Manage Categories page
     * For admin to view categories.
+
+    ![Manage Categories](docs/categories.png)
+
 7. Edit Category page
     * For admin to edit category.
+
+    ![Edit Category](docs/editcategory.png)
+
 8. New Category page
     * For admin to create new category.
+
+    ![Add New Category](docs/addnewcategory.png)
+
 9. 404.html
     * Redirects the user back to events.html to prevent them having to press the browser back button for better experience.
+
     ![404 error page](docs/404.png)
 
 ### General features on each page
@@ -232,6 +256,7 @@ All Pages on the website are responsive and have:
 ### Future Implementations
 
 * Add next 5 years.
+
 * Store past events for reference.
 
 ### Accessibility
@@ -258,9 +283,13 @@ All Pages on the website are responsive and have:
 
 * [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
 
+* [Heroku](https://id.heroku.com/login) - Hosting Website
+
 * [jQuery](https://jquery.com/) - A JavaScript library.
 
 * [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
+
+* [Materialize](https://materializecss.com/) - A modern responsive front-end framework based on Material Design
 
 * [TinyPNG](https://tinypng.com/) To compress image.
 
@@ -383,14 +412,17 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
   * The home page shows the event cards that have been added.
 
   ![Home](docs/home.png)
+
 * I want to be able to navigate the site easily to find information.
   * All site navigation is in the top right corner on every page of the website.
 
   ![Nav](docs/nav.png)
+
 * I want to be able to find their social media pages.
   * In the footer on every page sits links to the social media pages.
 
   ![Social Media links](docs/footer.png)
+
 * I want the website to be responsive to whichever device I am using.
   * I have checked that the website is responsive on multiple devices.
 
@@ -407,16 +439,19 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
   * I have added a log in page so returning visitors can log back in.
 
   ![Log In](docs/login.png)
+
 * I want to be able to introduce more users to my events coming up to increase attendance.
   * In the footer on every page sits links to the social media pages to spread the website and events on the website to increase attendance.
 
   ![Social Media links](docs/footer.png)
+
 * I want to be able to edit my own events.
   * I have added on each event card an edit button thats sends them to an edit page.
 
   ![Event Card](docs/events3.png)
 
   ![Edit Event](docs/editevent.png)
+  
 * I want to be able to delete my own events.
   * I have added on each event card a delete button thats sends them to a delete modal before deleting.
 
@@ -434,10 +469,35 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 |  login.html    |    [Result](docs/testing/lighthouse/loginmobile.png)    |    [Result](docs/testing/lighthouse/logindesktop.png)   | 
 |  register.html     |    [Result](docs/testing/lighthouse/registermobile.png)     |    [Result](docs/testing/lighthouse/registerdesktop.png)    |  
 |  profile.html |    [Result](docs/testing/lighthouse/profilemobile.png) |    [Result](docs/testing/lighthouse/profiledesktop.png)  | 
-
+|  categories.html |    [Result](docs/testing/lighthouse/categoriesmobile.png) |    [Result](docs/testing/lighthouse/categoriesdesktop.png)  | 
+|  new_event.html |    [Result](docs/testing/lighthouse/new_eventmobile.png) |    [Result](docs/testing/lighthouse/new_eventdesktop.png)  | 
+|  edit_event.html |    [Result](docs/testing/lighthouse/edit_eventmobile.png) |    [Result](docs/testing/lighthouse/edit_eventdesktop.png)  | 
+|  new_category.html |    [Result](docs/testing/lighthouse/new_categorymobile.png) |    [Result](docs/testing/lighthouse/new_categorydesktop.png)  | 
+|  edit_category.html |    [Result](docs/testing/lighthouse/edit_categorymobile.png) |    [Result](docs/testing/lighthouse/edit_categorydesktop.png)  | 
 
 ### Further Testing
 
  * The website was tested on Google Chrome, Safari and Microsoft Edge browsers.
  * The website was tested on multiple devices: Desktop, Mackbook 14inch, iPad Pro and iPhone 14.
  * All browsers and devices were tested on all pages to make sure all the pages and links are working properly.
+
+ ### Manual Testing
+
+#### All pages
+Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Nav links:hover | Background colour when links are hovered | Hovered over each header link | Colour changed | Pass |
+| Nav links| Launches / Resets Nav Links| Clicked the Nav Links| Links clicked and correct pages launched | Pass |
+| Social Media links| Text change colour when links are hovered | Hovered over each header link | Colour changed | Pass |
+
+#### events.html
+Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Reset" Button | Resets the search text bar | Entered text to search bar and then clicked "Reset" button | Search bar clears | Pass | 
+| "Search" Button | Launches the search | Entered text to the search bar and clicked "Search" button | Search results appear on the page | Pass | 
+| Answers:hover | Background change colour when the mouse hovers | Hovered over any answer | Colour changed | Pass |
+| Answers:clicked | Background change colour when clicked | Clicked any answer | Colour changed green for correct answer and red for wrong answer  | Pass |
+| Answers:clicked | New question appears| Clicked an answer | Next question appeared | Pass |
+| Timer alert | Timer alert when timer runs out | Let the timer run out | Alert boxed launched with "OK" button | Pass |
+| "OK" alert button | Resets quiz | Clicked "OK" button | Reset quiz | Pass |
+| 5 questions answered | end.html launched with final score | Completed quiz answering 5 questions | end.html appeared | Pass
