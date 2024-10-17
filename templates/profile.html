@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+    <!--User Profile-->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel indigo lighten-5">
@@ -10,7 +10,7 @@
             </div>
         </div>
     </div>
-
+    <!--Users Events-->
     <div class="row">
         {% if events|length > 0 %}
             {% for event in events %}
@@ -55,7 +55,7 @@
             <h3 class="white-text text-darken-4 indigo darken-4 center-align">It looks like you haven't added an event yet!</h3>
         {% endif %}   
     </div>
-
+    <!--Delete Modal-->
     <div id="deleteevent" class="modal">
         <div class="modal-content">
             <h4 class="indigo-text text-darken-4">Are you sure you want to delete this event?</h4>

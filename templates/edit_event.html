@@ -6,7 +6,7 @@
         <div class="card-panel indigo lighten-5">
             <h4 class="center-align indigo-text text-darken-4">Edit Event</h4>
             <form method="POST" action="{{ url_for('edit_event', event_id=event._id) }}">
-                <!-- Category Selector -->
+                <!--Category Selector-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-folder-open prefix indigo-text text-darken-4"></i>
@@ -23,7 +23,7 @@
                         <label for="category_name">Event Category</label>
                     </div>
                 </div>
-                <!-- Add Event Name -->
+                <!--Add Event Name-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-thumbtack prefix indigo-text text-darken-4"></i>
@@ -32,7 +32,7 @@
                         <label for="event_name">Event Name</label>
                     </div>
                 </div>
-                <!-- Add Event Location -->
+                <!--Add Event Location-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-map-marked-alt prefix indigo-text text-darken-4"></i>
@@ -41,7 +41,7 @@
                         <label for="location">Event Location</label>
                     </div>
                 </div>
-                <!-- Add Event Date -->
+                <!--Add Event Date-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-calendar-alt prefix indigo-text text-darken-4"></i>
@@ -50,7 +50,7 @@
                         <label for="date">Event Date</label>
                     </div>
                 </div>
-                <!-- Add Event Details -->
+                <!--Add Event Details-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-align-left prefix indigo-text text-darken-4"></i>
@@ -61,7 +61,7 @@
                         <label for="event_details">Event Details</label>
                     </div>
                 </div>
-                <!-- Add Website Link -->
+                <!--Add Website Link-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-link prefix indigo-text text-darken-4"></i>
@@ -70,7 +70,7 @@
                         <label for="link">Website Link</label>
                     </div>
                 </div>
-                <!-- Add Image URL -->
+                <!--Add Image URL-->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-image prefix indigo-text text-darken-4"></i>
@@ -82,7 +82,7 @@
                             at the top of the page) above!</p>
                     </div>
                 </div>
-                <!-- Submit Button -->
+                <!--Submit Button-->
                 <div class="row">
                     <div class="col s12 center-align">
                         <a href="{{ url_for('get_events') }}" class="btn-large red darken-4 text-shadow">

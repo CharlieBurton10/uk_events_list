@@ -20,6 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# events.html
 @app.route("/")
 @app.route("/get_events")
 def get_events():
@@ -34,6 +35,7 @@ def search():
     return render_template("events.html", events=events)
 
 
+# register.html
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -57,6 +59,7 @@ def register():
     return render_template("register.html")
 
 
+# login.html
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -84,6 +87,7 @@ def login():
     return render_template("login.html")
 
 
+# profile.html
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -97,6 +101,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# logout
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -105,6 +110,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# new_event.html
 @app.route("/new_event", methods=["GET", "POST"])
 def new_event():
     if request.method == "POST":
@@ -125,6 +131,7 @@ def new_event():
     return render_template("new_event.html", categories=categories)
 
 
+# edit_event.html
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     if request.method == "POST":
@@ -146,6 +153,7 @@ def edit_event(event_id):
     return render_template ("edit_event.html", event=event, categories=categories)
 
 
+# delete event
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
     mongo.db.events.delete_one({"_id": ObjectId(event_id)})
@@ -153,12 +161,14 @@ def delete_event(event_id):
     return redirect(url_for("get_events"))
 
 
+# categories.html
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
+# new_category.html
 @app.route("/new_category", methods=["GET", "POST"])
 def new_category():
     if request.method == "POST":
@@ -171,6 +181,7 @@ def new_category():
     return render_template("new_category.html")
 
 
+# edit_category.html
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -184,6 +195,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# delete_category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
@@ -191,6 +203,7 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
+# 404 errors
 @app.errorhandler(404)
 def not_found(error):
     return render_template("404.html", error=error), 404

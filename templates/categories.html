@@ -6,6 +6,7 @@
         <h4 class="indigo-text text-darken-4 center-align">Manage Categories</h4>
         <br>
         <div class="col s12 center-align">
+            <!--Add Category-->
             <div class="row">
                 <a href="{{ url_for('new_category') }}" class="btn-large  indigo darken-2 text-shadow">
                     Add Category <i class="fas fa-plus-square right"></i>
@@ -13,6 +14,7 @@
             </div>
         </div>
         <div class="row">
+            <!--All Categories-->
             {% for category in categories %}
                 <div class="col s12 m6">
                     <div class="card indigo darken-4 text-shadow center-align">
