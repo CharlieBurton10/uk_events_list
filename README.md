@@ -201,7 +201,7 @@ The website is comprised of:
 6. Manage Categories page
     * For admin to view categories.
 
-    ![Manage Categories](docs/categories.png)
+    ![Manage Categories](docs/managecategories.png)
 
 7. Edit Category page
     * For admin to edit category.
@@ -380,23 +380,23 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 
 [Home Page HTML](docs/testing/w3chome.png) - Passed
 
-[Login Page HTML](docs/testing/w3clogin.pgn) - Passed
+[Login Page HTML](docs/testing/w3clogin.png) - Passed
 
-[Register Page HTML](docs/testing/w3cregister.pgn) - Passed
+[Register Page HTML](docs/testing/w3cregister.png) - Passed
 
 [Profile Page HTML](docs/testing/w3cprofile.pgn) - 
 
-[New Event Page HTML](docs/testing/w3cnew_event.pgn) - Passed
+[New Event Page HTML](docs/testing/w3cnew_event.png) - Passed
 
-[Edit Event Page HTML](docs/testing/w3cnew_event.pgn) - 3 errors with 'No space between attributes'. This has no been resolved with spaces being added.
+[Edit Event Page HTML](docs/testing/w3cedit_event.png) - 3 errors with 'No space between attributes'. This has no been resolved with spaces being added.
 
-[Manage Categories Page HTML](docs/testing/w3cget_catergories.png) - Passed
+[Manage Categories Page HTML](docs/testing/w3cget_categories.png) - Passed
 
-[New Category Page HTML](docs/testing/w3cgnew_catergory.png) - Passed
+[New Category Page HTML](docs/testing/w3cnew_category.png) - Passed
 
-[Edit Category Page HTML](docs/testing/w3cget_catergory.png) - Passed
+[Edit Category Page HTML](docs/testing/w3cedit_category.png) - Passed
 
-[404 Page HTML](docs/testing/w3c404.png) - 
+[404 Page HTML](docs/testing/) - 
 
 [CSS](docs/testing/w3ccss.png) - Passed
 
@@ -451,7 +451,7 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
   ![Event Card](docs/events3.png)
 
   ![Edit Event](docs/editevent.png)
-  
+
 * I want to be able to delete my own events.
   * I have added on each event card a delete button thats sends them to a delete modal before deleting.
 
@@ -481,7 +481,7 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
  * The website was tested on multiple devices: Desktop, Mackbook 14inch, iPad Pro and iPhone 14.
  * All browsers and devices were tested on all pages to make sure all the pages and links are working properly.
 
- ### Manual Testing
+### Manual Testing
 
 #### All pages
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
@@ -494,10 +494,69 @@ Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 | --- | --- | --- | --- | --- |
 | "Reset" Button | Resets the search text bar | Entered text to search bar and then clicked "Reset" button | Search bar clears | Pass | 
-| "Search" Button | Launches the search | Entered text to the search bar and clicked "Search" button | Search results appear on the page | Pass | 
-| Answers:hover | Background change colour when the mouse hovers | Hovered over any answer | Colour changed | Pass |
-| Answers:clicked | Background change colour when clicked | Clicked any answer | Colour changed green for correct answer and red for wrong answer  | Pass |
-| Answers:clicked | New question appears| Clicked an answer | Next question appeared | Pass |
-| Timer alert | Timer alert when timer runs out | Let the timer run out | Alert boxed launched with "OK" button | Pass |
-| "OK" alert button | Resets quiz | Clicked "OK" button | Reset quiz | Pass |
-| 5 questions answered | end.html launched with final score | Completed quiz answering 5 questions | end.html appeared | Pass
+| "Search" Button | Launches the search | Entered text to the search bar and clicked "Search" button | Search results appear on the page | Pass |
+
+#### events.html/profile.hml
+Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Event Card Ellipsis | Opens card reveal | Clicked Ellipsis on event card | Sent me to card reveal with event details| Pass |
+| Event Card "Edit" Button | To be directed to the edit_event.html | Clicked the edit button | Clicked and edit event page was launched | Pass |
+| Event Card "Delete" Button | To be directed to the delete modal | Clicked the delete button | Clicked and delete modal appeared | Pass |
+| Modal "Delete" Button | For event to be deleted | Clicked the delete button | Event is deleted| Pass |
+| Modal "Cancel" Button |To go back to previous page | Clicked "Cancel" button | Went back to previous page | Pass |
+
+#### login.html/register.html
+Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Login/Register" Button | Sends them to the profile.html page| Clicked button| Profile.html launched | Pass |
+
+#### new_event.html/new_category.html/edit_event.html/edit_category.html
+Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Add/Edit Event/Category" Button | To be able add or change an Event or Category | Submit the button | Added or edited the Event/Category | Pass |
+
+#### edit_event.html/edit_category.html
+Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Cancel" button |To go back to previous page | Clicked "Cancel" button | Went back to previous page | Pass |
+
+#### categories.html
+Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Edit" Button | To be directed to the edit_event.html | Clicked the edit button | Clicked and edit event page was launched | Pass |
+| "Delete" Button | To delete Category | Clicked the delete button | Deleted Category| Pass |
+
+## Credits
+
+### Code Snippets
+
+* [Interested Button](https://stackoverflow.com/questions/69128753/html-javascript-multiple-like-buttons-on-a-single-page) on StackOverflow
+
+### Tutorials
+
+*  Processes from the CI task manager mini project was used to help create this website - [Task-Manager-Mini-Project](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main)
+
+###  Background Image
+
+* [Union Jack](https://pixabay.com/illustrations/union-jack-british-flag-uk-english-1027893/) - Image by TheDigitalArtist from Pixabay
+
+### Event Images
+
+* [New Years Day 2025](https://unsplash.com/photos/a-number-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-kbgoyL5pXuw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Li Zhang on Unsplash
+* [Burns Night](https://unsplash.com/photos/red-blue-and-black-striped-textile-1VCTjIOnUQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)Photo by Henrik Hjortshøj on Unsplash
+* [Comedy Festival](https://unsplash.com/photos/pink-and-white-heart-shaped-cake-gt9bbQH0uGY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Girl with red hat on Unsplash
+* [Boat Race](https://unsplash.com/photos/men-rowing-boat-H3htK85wwnU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Mitchell Luo on Unsplash
+* [London Marathon](https://unsplash.com/photos/a-group-of-people-posing-for-a-photo-QITAaHY1voY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Steward Masweneng on Unsplash
+* [Food Festival](https://unsplash.com/photos/a-woman-is-holding-a-bowl-of-food-BzoOOUVle9g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by frogses production on Unsplash
+* [West End Live](https://unsplash.com/photos/stage-door-signage-g-23pY-8I20?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Carson Masterson on Unsplash
+* [Great North Run](https://unsplash.com/photos/people-running-on-road-during-daytime-NPFu4GfFZ7E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Mārtiņš Zemlickis on Unsplash
+* [Iris Prize Festival](https://unsplash.com/photos/person-with-blue-and-red-manicure-JngP0kqu6JQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Alexander Grey on Unsplash
+  
+### Event Details
+
+* [Visit Britain](https://www.visitbritain.com/en/annual-events-britain) For all event details.
+
+###  Acknowledgments
+
+ * My Code Institute Mentor, Can Sucullu for his helpful feedback and support.
+ * Tutor Support at Code Institute.
