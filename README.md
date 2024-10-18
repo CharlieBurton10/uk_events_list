@@ -62,25 +62,25 @@ ___
 ## Rationale
 
 ### Project Introduction
-An opportunity to bring together events from across the UK to one place, allowing you to be able to check upcoming events in 2025. You will also be able to register/login to your account, where you can add, edit and delete their own events.
+An opportunity to bring together events from across the UK to one place, allowing you to be able to check upcoming events in 2025. You will also be able to register/login to your account, where you can add, edit and delete your own events.
 
 ### Motivation and Inspiration
-Events are happening every day through out the UK and indeed the World. Whether these are National events, sporting events, to Festivals of all sizes. This website gives the opportunity to bring these all together as an easy point of reference to check details or location of the event.
+Events are happening every day throughout the UK and indeed the World. Whether these are National or sporting events, to festivals of all sizes. This website gives the opportunity to bring these all together as an easy point of reference to check details or the location of the event.
 
-The inspiration for creating this website is to produce an Event log that is accessible to all, that may encourage and introduce users to become attendees to new events around the UK and help educate users on different events going on around the UK.
+The inspiration for creating this website is to produce an event log that is accessible to all, that may encourage and introduce users to become attendees to new events around the UK and help educate users on different events going on around the UK.
 
 ### Project Scope and Limitations
-The scope of the project includes the creation of an Event database with the features focusing on usability on mulitple devices and accessbility for anyone wanting to go to UK Events.
+The scope of the project includes the creation of an event database with the features focusing on usability on mulitple devices and accessbility for anyone wanting to go to UK events.
 
-The known limitation is the UK Events website currently just forcuses on next year (2025) and is UK based. To solve this limitation I would expand to other future years with a section for past events and potentially expand to add different locations Worldwide.
+The known limitation is the UK events website currently just forcuses on next year (2025) and is UK based. To solve this limitation I would expand to future years with a section for past events and potentially expand to add different locations worldwide.
 
 ## User Experience (UX)
 
 ### Site Goals
-* I want the user to be able to view the site on a range of device sizes.
+* I want the user to be able to view the site on a range of device.
 * I want the site to be attractive, responsive and easy to use for the user.
-* I want the site to work as up-to-date reference point for UK Events.
-* I want the user to be educated on Events that they may not know about.
+* I want the site to work as up-to-date reference point for UK events.
+* I want the user to be educated on events that they may not know about.
 * I want the site to be user friendly and for all ages.
 
 ### User Stories
@@ -157,7 +157,7 @@ The third table has the information for each event. It hold 9 fields that compri
 ## Features
 
 The website is comprised of:
-1. Home Events page
+1. Home/Events page
     * Shows the events.
 
     ![Events Card](docs/events.png)
@@ -166,7 +166,7 @@ The website is comprised of:
 
     ![Events Card 3](docs/events3.png)
 
-    * Has a Search feature.
+    * Has a search feature.
 
     ![Search](docs/search.png)
 
@@ -220,13 +220,13 @@ The website is comprised of:
 
 ### General features on each page
 
-All Pages on the website are responsive and have:
+All pages on the website are responsive and have:
 
 * A favicon in the browser tab.
 
 ![Favicon](docs/favicon.png)
 
-* All Pages on the website have:
+* All pages on the website have:
   * Logo
 
     ![logo](docs/logo.png)
@@ -258,6 +258,8 @@ All Pages on the website are responsive and have:
 * Add next 5 years.
 
 * Store past events for reference.
+
+* Store interest button in the User Database.
 
 ### Accessibility
 
@@ -320,7 +322,7 @@ The local development section gives instructions on how someone else could make 
 
 #### How to Fork
 
-To fork classicalmusicquiz repository:
+To fork uk_event_list repository:
 
 1. Log in to Github.
 2. Go to the repository for this project, CharlieBurton10/uk_event_list
@@ -341,8 +343,8 @@ To clone uk_event_list repository:
 
 1. Navigate to [Heroku.com](https://www.heroku.com/).
 2. Create a new account or login.
-3. Click the **new** button, then **create new app** button.
-4. Choose your app name and the region and click **create app**.
+3. Click the **New** button, then **Create New App** button.
+4. Choose your app name and the region and click **Create App**.
 
 #### Connecting your Heroku account to your Github repository :
 
@@ -404,7 +406,7 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 
 #### Solve Validator Bug
 
-When putting my profile.html and 404.html website address through the w3c Validator it came back with the below.
+When putting my profile.html and 404.html website address through the W3C Validator it came back with the below.
 
 [W3C Profile Error](docs/testing/w3cprofileerror.png) 
 
@@ -415,7 +417,7 @@ I also tried to use the text input option, of pasting in my code for the profile
 [Text Input Error](docs/testing/error1.png)
 [Text Input Error](docs/testing/error2.png)
 
-To resolve this problem I searched on Slack, Stack and Google. On google I found an [Online W3C Validator](https://pypi.org/project/Online-W3C-Validator/) which I installed in my terminal and then checked both of the below pages through the terminal. Results are below:
+To resolve this problem I searched on Slack, Stack and Google. On Google I found an [Online W3C Validator](https://pypi.org/project/Online-W3C-Validator/) which I installed in my terminal and then checked both of the below pages through the terminal. Results are below:
 
 [Profile Page HTML](docs/testing/w3cprofile.pgn) - Info: Line empty, this I have resolved.
 
@@ -505,7 +507,7 @@ To resolve this problem I searched on Slack, Stack and Google. On google I found
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Nav links:hover | Background colour when links are hovered | Hovered over each header link | Colour changed | Pass |
-| Nav links| Launches / Resets Nav Links| Clicked the Nav Links| Links clicked and correct pages launched | Pass |
+| Nav links| Launches / resets nav links| Clicked the nav links| Links clicked and correct pages launched | Pass |
 | Social Media links| Text change colour when links are hovered | Hovered over each header link | Colour changed | Pass |
 
 #### events.html
@@ -517,7 +519,7 @@ Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 #### events.html/profile.hml
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Event Card Ellipsis | Opens card reveal | Clicked Ellipsis on event card | Sent me to card reveal with event details| Pass |
+| Event Card "Ellipsis" Button | Opens card reveal | Clicked ellipsis on event card | Sent me to card reveal with event details| Pass |
 | Event Card "Edit" Button | To be directed to the edit_event.html | Clicked the edit button | Clicked and edit event page was launched | Pass |
 | Event Card "Delete" Button | To be directed to the delete modal | Clicked the delete button | Clicked and delete modal appeared | Pass |
 | Modal "Delete" Button | For event to be deleted | Clicked the delete button | Event is deleted| Pass |
@@ -526,12 +528,12 @@ Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 #### login.html/register.html
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 | --- | --- | --- | --- | --- |
-| "Login/Register" Button | Sends them to the profile.html page| Clicked button| Profile.html launched | Pass |
+| "Login / Register" Button | Sends them to the profile.html page| Clicked button| Profile.html launched | Pass |
 
 #### new_event.html/new_category.html/edit_event.html/edit_category.html
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 | --- | --- | --- | --- | --- |
-| "Add/Edit Event/Category" Button | To be able add or change an Event or Category | Submit the button | Added or edited the Event/Category | Pass |
+| "Add / Edit Event / Category" Button | To be able add or change an event or category | Submit the button | Added or edited the event / category | Pass |
 
 #### edit_event.html/edit_category.html
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
@@ -542,7 +544,7 @@ Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 | --- | --- | --- | --- | --- |
 | "Edit" Button | To be directed to the edit_event.html | Clicked the edit button | Clicked and edit event page was launched | Pass |
-| "Delete" Button | To delete Category | Clicked the delete button | Deleted Category| Pass |
+| "Delete" Button | To delete category | Clicked the delete button | Deleted category| Pass |
 
 ## Credits
 
@@ -577,5 +579,5 @@ Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 
 ###  Acknowledgments
 
- * My Code Institute Mentor, Can Sucullu for his helpful feedback and support.
+ * My Code Institute Mentor, Can Sucullu, for his helpful feedback and support.
  * Tutor Support at Code Institute.
