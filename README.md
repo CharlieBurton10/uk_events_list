@@ -384,8 +384,6 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 
 [Register Page HTML](docs/testing/w3cregister.png) - Passed
 
-[Profile Page HTML](docs/testing/w3cprofile.pgn) - 
-
 [New Event Page HTML](docs/testing/w3cnew_event.png) - Passed
 
 [Edit Event Page HTML](docs/testing/w3cedit_event.png) - 3 errors with 'No space between attributes'. This has no been resolved with spaces being added.
@@ -403,6 +401,25 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 [JQuery Validator](docs/testing/jqueryvalidator.png) - JQuery is valid
 
 [app.py](docs/testing/app_py.png): No errors were returned when passing through CI Python Linter
+
+#### Solve Validator Bug
+
+When putting my profile.html and 404.html website address through the w3c Validator it came back with the below.
+
+[W3C Profile Error](docs/testing/w3cprofileerror.png) 
+
+[W3C 404 Error](docs/testing/w3cprofileerror.png) 
+
+I also tried to use the text input option, of pasting in my code for the profile.html and got 34 errors on the python/Database code, that was odd as the event cards are also on my events.html and I did not get any errors on that page. I presume this is due to the login function.
+
+[Text Input Error](docs/testing/error1.png)
+[Text Input Error](docs/testing/error2.png)
+
+To resolve this problem I searched on Slack, Stack and Google. On google I found an [Online W3C Validator](https://pypi.org/project/Online-W3C-Validator/) which I installed in my terminal and then checked both of the below pages through the terminal. Results are below:
+
+[Profile Page HTML](docs/testing/w3cprofile.pgn) - Info: Line empty, this I have resolved.
+
+[404 Page HTML](docs/testing/w3c404.png) - Error: The link to home page was wrong, this has now been resolved.
 
 ### Testing User Stories
 
@@ -474,6 +491,7 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 |  edit_event.html |    [Result](docs/testing/lighthouse/edit_eventmobile.png) |    [Result](docs/testing/lighthouse/edit_eventdesktop.png)  | 
 |  new_category.html |    [Result](docs/testing/lighthouse/new_categorymobile.png) |    [Result](docs/testing/lighthouse/new_categorydesktop.png)  | 
 |  edit_category.html |    [Result](docs/testing/lighthouse/edit_categorymobile.png) |    [Result](docs/testing/lighthouse/edit_categorydesktop.png)  | 
+|  404.html  |    [Result](docs/testing/lighthouse/404mobile.png)   |    [Result](docs/testing/lighthouse/404desktop.png)  | 
 
 ### Further Testing
 
@@ -530,27 +548,28 @@ Feature | Expected Outcome	| Testing Performed |	Result	| Pass/Fail |
 
 ### Code Snippets
 
-* [Interested Button](https://stackoverflow.com/questions/69128753/html-javascript-multiple-like-buttons-on-a-single-page) on StackOverflow
+* [Interested Button](https://stackoverflow.com/questions/69128753/html-javascript-multiple-like-buttons-on-a-single-page) on StackOverflow.
+* [Error 404 Page](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) for Python help.
 
 ### Tutorials
 
-*  Processes from the CI task manager mini project was used to help create this website - [Task-Manager-Mini-Project](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main)
+*  Processes from the CI task manager mini project was used to help create this website - [Task-Manager-Mini-Project](https://github.com/Code-Institute-Solutions/TaskManagerAuth/tree/main).
 
 ###  Background Image
 
-* [Union Jack](https://pixabay.com/illustrations/union-jack-british-flag-uk-english-1027893/) - Image by TheDigitalArtist from Pixabay
+* [Union Jack](https://pixabay.com/illustrations/union-jack-british-flag-uk-english-1027893/) - Image by TheDigitalArtist from Pixabay.
 
 ### Event Images
 
-* [New Years Day 2025](https://unsplash.com/photos/a-number-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-kbgoyL5pXuw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Li Zhang on Unsplash
-* [Burns Night](https://unsplash.com/photos/red-blue-and-black-striped-textile-1VCTjIOnUQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)Photo by Henrik Hjortshøj on Unsplash
-* [Comedy Festival](https://unsplash.com/photos/pink-and-white-heart-shaped-cake-gt9bbQH0uGY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Girl with red hat on Unsplash
-* [Boat Race](https://unsplash.com/photos/men-rowing-boat-H3htK85wwnU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Mitchell Luo on Unsplash
-* [London Marathon](https://unsplash.com/photos/a-group-of-people-posing-for-a-photo-QITAaHY1voY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Steward Masweneng on Unsplash
-* [Food Festival](https://unsplash.com/photos/a-woman-is-holding-a-bowl-of-food-BzoOOUVle9g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by frogses production on Unsplash
-* [West End Live](https://unsplash.com/photos/stage-door-signage-g-23pY-8I20?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Carson Masterson on Unsplash
-* [Great North Run](https://unsplash.com/photos/people-running-on-road-during-daytime-NPFu4GfFZ7E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Mārtiņš Zemlickis on Unsplash
-* [Iris Prize Festival](https://unsplash.com/photos/person-with-blue-and-red-manicure-JngP0kqu6JQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Alexander Grey on Unsplash
+* [New Years Day 2025](https://unsplash.com/photos/a-number-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-twenty-kbgoyL5pXuw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Li Zhang on Unsplash.
+* [Burns Night](https://unsplash.com/photos/red-blue-and-black-striped-textile-1VCTjIOnUQA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)Photo by Henrik Hjortshøj on Unsplash.
+* [Comedy Festival](https://unsplash.com/photos/pink-and-white-heart-shaped-cake-gt9bbQH0uGY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Girl with red hat on Unsplash.
+* [Boat Race](https://unsplash.com/photos/men-rowing-boat-H3htK85wwnU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Mitchell Luo on Unsplash.
+* [London Marathon](https://unsplash.com/photos/a-group-of-people-posing-for-a-photo-QITAaHY1voY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Steward Masweneng on Unsplash.
+* [Food Festival](https://unsplash.com/photos/a-woman-is-holding-a-bowl-of-food-BzoOOUVle9g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by frogses production on Unsplash.
+* [West End Live](https://unsplash.com/photos/stage-door-signage-g-23pY-8I20?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Carson Masterson on Unsplash.
+* [Great North Run](https://unsplash.com/photos/people-running-on-road-during-daytime-NPFu4GfFZ7E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Mārtiņš Zemlickis on Unsplash.
+* [Iris Prize Festival](https://unsplash.com/photos/person-with-blue-and-red-manicure-JngP0kqu6JQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) Photo by Alexander Grey on Unsplash.
   
 ### Event Details
 
